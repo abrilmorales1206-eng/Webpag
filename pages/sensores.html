@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestión de sensores - Tutorial de desarrollo móvil</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="../index.html">Desarrollo móvil</a>
+  <nav aria-label="Principal"><a href="../index.html">Inicio</a><a href="versiones.html">Versiones</a><a href="persistencia.html">Datos</a><a href="sensores.html" aria-current="page">Sensores</a><a href="multimedia.html">Multimedia</a><a href="servicios.html">Servicios</a><a href="librerias.html">Librerías</a><a href="depuracion.html">Depuración</a><a href="referencias.html">Referencias</a></nav>
+</div></header>
+<section class="band"><div class="in">
+  <p class="eyebrow">Tema 3 de 8</p>
+  <span class="big" aria-hidden="true">03</span>
+  <h1>Gestión de sensores</h1>
+</div></section>
+<div class="local"><div class="in"><span>En esta página:</span><a href="#s1">Definición</a><a href="#s2">Tipos de sensores</a><a href="#s3">Proceso de gestión</a></div></div>
+<main class="in">
+<section class="blk" id="s1"><h3>Definición</h3><div class="txt"><p>Los sensores son componentes del dispositivo que miden magnitudes físicas (movimiento, posición, luz) y las convierten en datos que la app puede usar.</p>
+  </div></section>
+<section class="blk" id="s2"><h3>Tipos de sensores</h3><div class="txt"><ul>
+    <li><b>Movimiento:</b> acelerómetro, giroscopio.</li>
+    <li><b>Posición:</b> GPS, magnetómetro (brújula), proximidad.</li>
+    <li><b>Ambiente:</b> luz, barómetro, temperatura, humedad.</li>
+    <li><b>Biométricos:</b> huella digital y reconocimiento facial.</li>
+  </ul>
+  </div></section>
+<section class="blk" id="s3"><h3>Proceso de gestión</h3><div class="txt"><ol>
+    <li><b>Habilitación:</b> declarar y pedir permisos y comprobar que el sensor existe.</li>
+    <li><b>Obtención:</b> registrar un <i>listener</i> para recibir los valores.</li>
+    <li><b>Procesamiento:</b> filtrar, interpretar y mostrar los datos; al terminar, liberar el sensor para ahorrar batería.</li>
+  </ol>
+  <pre><code>val sm = getSystemService(SENSOR_SERVICE) as SensorManager
+val acel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+sm.registerListener(this, acel, SensorManager.SENSOR_DELAY_NORMAL)</code></pre>
+</div></section>
+<div class="pager"><a href="persistencia.html"><small>Anterior</small>Persistencia y acceso a datos</a><a href="multimedia.html"><small>Siguiente</small>Recursos multimedia</a></div>
+</main>
+<footer><div class="in">Tutorial de desarrollo móvil. <a href="#">Volver arriba</a></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

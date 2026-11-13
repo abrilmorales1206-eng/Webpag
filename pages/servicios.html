@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios y notificaciones - Tutorial de desarrollo móvil</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="../index.html">Desarrollo móvil</a>
+  <nav aria-label="Principal"><a href="../index.html">Inicio</a><a href="versiones.html">Versiones</a><a href="persistencia.html">Datos</a><a href="sensores.html">Sensores</a><a href="multimedia.html">Multimedia</a><a href="servicios.html" aria-current="page">Servicios</a><a href="librerias.html">Librerías</a><a href="depuracion.html">Depuración</a><a href="referencias.html">Referencias</a></nav>
+</div></header>
+<section class="band"><div class="in">
+  <p class="eyebrow">Tema 5 de 8</p>
+  <span class="big" aria-hidden="true">05</span>
+  <h1>Servicios y notificaciones</h1>
+</div></section>
+<div class="local"><div class="in"><span>En esta página:</span><a href="#s1">Definición y tareas en segundo plano</a><a href="#s2">Notificaciones</a><a href="#s3">Proceso de implementación</a><a href="#s4">Cómputo en la nube</a></div></div>
+<main class="in">
+<section class="blk" id="s1"><h3>Definición y tareas en segundo plano</h3><div class="txt"><p>Un servicio es un componente que realiza trabajo sin pantalla. Las tareas en segundo plano son procesos que siguen ejecutándose mientras el usuario usa otra app, como sincronizar datos o descargar archivos. Se implementan con Service, WorkManager o hilos.</p>
+  </div></section>
+<section class="blk" id="s2"><h3>Notificaciones</h3><div class="txt"><p>Son avisos que la app muestra fuera de su pantalla. Se crean con un <i>canal</i> de notificaciones, un constructor del mensaje y una llamada para publicarla. Desde Android 13 se necesita el permiso <code>POST_NOTIFICATIONS</code>. Las notificaciones <i>push</i> llegan desde un servidor, por ejemplo con Firebase Cloud Messaging.</p>
+  </div></section>
+<section class="blk" id="s3"><h3>Proceso de implementación</h3><div class="txt"><ol>
+    <li><b>Proveedor de contenido:</b> crear una clase <code>ContentProvider</code>, definir su URI y declararla en el manifiesto para compartir datos con otras apps.</li>
+    <li><b>Tarea en segundo plano:</b> crear un <code>Worker</code>, programarlo con <code>WorkManager</code> y definir sus condiciones (red, batería).</li>
+    <li><b>Notificación:</b> crear el canal, armar la notificación con <code>NotificationCompat.Builder</code> y publicarla con <code>notify()</code>.</li>
+  </ol>
+  </div></section>
+<section class="blk" id="s4"><h3>Cómputo en la nube</h3><div class="txt"><p>Servicios que evitan mantener servidores propios: Firebase (autenticación, base de datos, push), AWS Amplify, Microsoft Azure y Google Cloud.</p>
+</div></section>
+<div class="pager"><a href="multimedia.html"><small>Anterior</small>Recursos multimedia</a><a href="librerias.html"><small>Siguiente</small>Librerías y toolkits</a></div>
+</main>
+<footer><div class="in">Tutorial de desarrollo móvil. <a href="#">Volver arriba</a></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control de versiones - Tutorial de desarrollo móvil</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="../index.html">Desarrollo móvil</a>
+  <nav aria-label="Principal"><a href="../index.html">Inicio</a><a href="versiones.html" aria-current="page">Versiones</a><a href="persistencia.html">Datos</a><a href="sensores.html">Sensores</a><a href="multimedia.html">Multimedia</a><a href="servicios.html">Servicios</a><a href="librerias.html">Librerías</a><a href="depuracion.html">Depuración</a><a href="referencias.html">Referencias</a></nav>
+</div></header>
+<section class="band"><div class="in">
+  <p class="eyebrow">Tema 1 de 8</p>
+  <span class="big" aria-hidden="true">01</span>
+  <h1>Control de versiones</h1>
+</div></section>
+<div class="local"><div class="in"><span>En esta página:</span><a href="#s1">Definición</a><a href="#s2">Tipos de sistemas</a><a href="#s3">Funcionamiento y gestión de cambios</a></div></div>
+<main class="in">
+<section class="blk" id="s1"><h3>Definición</h3><div class="txt"><p>Es un sistema que registra los cambios hechos a los archivos de un proyecto a lo largo del tiempo. Permite volver a versiones anteriores, saber quién cambió qué y trabajar en equipo sin pisar el trabajo de otros.</p>
+  </div></section>
+<section class="blk" id="s2"><h3>Tipos de sistemas</h3><div class="txt"><div class="grid">
+    <article><h4>Local</h4><p>Las versiones se guardan en el mismo equipo (ejemplo: RCS).</p>
+      <p><b>Características:</b> simple, sin servidor.</p><p><b>Ventajas:</b> fácil de usar y rápido.</p><p><b>Desventajas:</b> sin colaboración y un fallo del disco pierde todo.</p></article>
+    <article><h4>Centralizado</h4><p>Un servidor guarda el historial y cada persona trabaja contra él (ejemplos: SVN, CVS).</p>
+      <p><b>Características:</b> un único repositorio central.</p><p><b>Ventajas:</b> control claro de accesos y fácil de entender.</p><p><b>Desventajas:</b> si el servidor falla no se puede versionar; requiere conexión.</p></article>
+    <article><h4>Distribuido</h4><p>Cada persona tiene una copia completa del historial (ejemplos: Git, Mercurial).</p>
+      <p><b>Características:</b> ramas baratas, trabajo sin conexión.</p><p><b>Ventajas:</b> rápido, resistente a fallos y flexible.</p><p><b>Desventajas:</b> curva de aprendizaje mayor y puede haber conflictos al fusionar.</p></article>
+  </div>
+  </div></section>
+<section class="blk" id="s3"><h3>Funcionamiento y gestión de cambios</h3><div class="txt"><p>El flujo básico es: modificar archivos, seleccionarlos (<i>stage</i>) y guardarlos con un <i>commit</i> que lleva autor, fecha y mensaje. Las <i>ramas</i> permiten desarrollar funciones por separado y luego unirlas con <i>merge</i>. El historial (<code>log</code>) y las diferencias (<code>diff</code>) permiten rastrear cada cambio; las <i>etiquetas</i> marcan versiones publicadas.</p>
+  <pre><code>git init
+git add .
+git commit -m "Primera versión de la app"
+git branch login
+git switch login
+git merge main
+git log --oneline
+git diff</code></pre>
+</div></section>
+<div class="pager"><a href="../index.html"><small>Volver</small>Inicio</a><a href="persistencia.html"><small>Siguiente</small>Persistencia y acceso a datos</a></div>
+</main>
+<footer><div class="in">Tutorial de desarrollo móvil. <a href="#">Volver arriba</a></div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
